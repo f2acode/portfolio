@@ -9,7 +9,6 @@ import React from "react";
 import About from "./Components/About";
 import Footer from "./Components/Footer";
 import Header from "./Components/Header";
-import Home from "./Components/Home";
 import Portfolio from "./Components/Portfolio";
 
 import "./styles.css";
@@ -25,7 +24,7 @@ import "./styles.css";
  */
 const siteProps = {
   name: "Felipe Augusto",
-  title: "Software/Data Guy & Entrepreneur",
+  title: "Software/Data professional & Entrepreneur",
   email: "augustto.felipe@hotmail.com",
   gitHub: "f2acode",
   // instagram: "microsoft",
@@ -35,14 +34,13 @@ const siteProps = {
   // youTube: "Code",
 };
 
-const primaryColor = "#4E567E";
+const primaryColor = "#164755";
 const secondaryColor = "#D2F1E4";
 
 const App = () => {
   return (
     <div id="main">
       <Header />
-      <Home name={siteProps.name} title={siteProps.title} />
       <About />
       <Portfolio />
       <Footer {...siteProps} primaryColor={primaryColor} secondaryColor={secondaryColor} />

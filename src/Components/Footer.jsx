@@ -52,7 +52,8 @@ const Footer = (props) => {
         backgroundColor: primaryColor,
         width: "100vw"
       }}
-    >
+      >
+      <h2 style={{ textAlign: "center", color: "white" }}>Contacts</h2>
       <div
         style={{
           display: "flex",

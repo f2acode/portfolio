@@ -15,16 +15,22 @@ const Header = () => {
         justifyContent: "center",
         gap: "2rem",
         background: "rgba(255,255,255,0.75)",
-        padding: "1rem",
+        padding: "1rem 0rem",
         top: 0,
         width: "100%",
         zIndex: 10,
+        fontWeight: "bold",
       }}
     >
-      <a href="#home">Home</a>
-      <a href="#about">About</a>
-      <a href="#portfolio">Portfolio</a>
-      <a href="#footer">Contact</a>
+      <a style={{ color: "#164755" }} href="#about">
+        About
+      </a>
+      <a style={{ color: "#164755" }} href="#portfolio">
+        Portfolio
+      </a>
+      <a style={{ color: "#164755" }} href="#footer">
+        Contact
+      </a>
     </div>
   );
 };
