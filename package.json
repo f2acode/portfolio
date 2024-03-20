@@ -5,7 +5,7 @@
   "source": "src/index.html",
   "homepage": "http://f2acode.github.io/portfolio",
   "scripts": {
-    "start": "parcel",
+    "start": "parcel --no-cache",
     "build": "parcel build",
     "build-gh": "parcel build --public-url 'https://f2acode.github.io/portfolio'",
     "predeploy": "npm run build-gh",

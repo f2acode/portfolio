@@ -3,7 +3,7 @@ import luna from "../images/portfolio/luna.png";
 import diary from "../images/portfolio/diary.png";
 import computeiro from "../images/portfolio/computeiro.png";
 import flutter from "../images/portfolio/flutter.png";
-import { Card, Descriptions, List, Row, Col, Tag } from "antd";
+import { Card, Descriptions, List, Row, Col } from "antd";
 const { Meta } = Card;
 
 const projectList = [
@@ -55,7 +55,7 @@ const projectList = [
 const Portfolio = () => {
   return (
     <section className="padding" id="portfolio">
-      <h2 style={{ textAlign: "center" }}>Portfolio</h2>
+      <h2 style={{ textAlign: "center" }}>Open Portfolio</h2>
       <hr />
       <Row>
         <Col span={18} offset={3}>
@@ -86,7 +86,6 @@ const Portfolio = () => {
                   <Meta title={project.title} description={project.description} />
                   <br />
                   <Descriptions
-                    title="Details"
                     bordered
                     size="small"
                     items={[

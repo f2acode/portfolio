@@ -6,6 +6,8 @@
 
 import React from "react";
 import "./About.css";
+import { LinkedinFilled } from "@ant-design/icons";
+import { Button } from "antd";
 
 import tech from "../images/tech-animation.gif";
 
@@ -43,6 +45,15 @@ const About = () => {
         </ul>
         <hr />
         <p className="detail">{detailOrQuote}</p>
+        <br />
+        <Button
+          type="primary"
+          style={{ backgroundColor: "#0077b5" }}
+          icon={<LinkedinFilled />}
+          size={"large"}
+        >
+          Let&apos;s connect on Linkedin 🤓
+        </Button>
       </div>
     </section>
   );
