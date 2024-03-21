@@ -101,7 +101,7 @@ const Portfolio = () => {
                     {project.role}
                   </Tag>
                 </Flex>
-                <Title level={5} style={{ fontWeight: "300" }}>
+                <Title level={5} style={{ fontWeight: "400" }}>
                   {project.description}
                 </Title>
                 <br />

@@ -29,6 +29,7 @@ const App = () => {
         token: {
           colorPrimary: primaryColor,
           colorBgContainer: "#fff",
+          fontFamily: "Montserrat, sans-serif",
         },
       }}
     >
