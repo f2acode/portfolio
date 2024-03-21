@@ -1,115 +1,125 @@
+import { Button, Card, Flex, Layout, Tag, Typography } from "antd";
+
 import React from "react";
-import luna from "../images/portfolio/luna.png";
-import diary from "../images/portfolio/diary.png";
 import computeiro from "../images/portfolio/computeiro.png";
+import diary from "../images/portfolio/diary.png";
 import flutter from "../images/portfolio/flutter.png";
-import { Card, Descriptions, List, Row, Col } from "antd";
-const { Meta } = Card;
+import luna from "../images/portfolio/luna.png";
+
+const { Content } = Layout;
+const { Title } = Typography;
 
 const projectList = [
   {
-    title: "Luna Co-founder",
+    title: "Luna",
     description:
-      "Founded and developed a insurance tech startup. I was responsible for the entire tech stack, from the website to the data engineering.",
+      "Insurance brokerage startup, innovating through technology, UX and customer service.",
     url: "https://luna.ac/",
     image: luna,
     role: "Co-founder & Developer",
-    type: "Entrepreneurship",
+    period: "2020 - 2023",
   },
   {
-    title: "Mobile app (Diary)",
-    description:
-      "Creation and development of a daily notes application with more than 100k downloads and a 4.7 rating on GooglePlay.",
+    title: "Diary",
+    description: "Daily notes App with more than 100k downloads and a 4.7 rating on GooglePlay.",
     url: "https://play.google.com/store/apps/details?id=me.correria.correria",
     image: diary,
-    type: "Entrepreneurship",
-    role: "Co-founder & Developer",
+    role: "Founder & Developer",
+    period: "2020 - 2023",
   },
   {
-    title: "Mobile app (Computeiro)",
-    description: "Open source app that provides exams and resources about POSCOMP.",
+    title: "Computeiro",
+    description: "Non-profit open source app that provides exams and resources about POSCOMP.",
     url: "",
     image: computeiro,
-    type: "Non-profit",
-    role: "Developer",
+    role: "Principal developer",
+    period: "2019",
   },
   {
-    title: "Flutter package - Pricing cards",
+    title: "Pricing cards",
     description: "Open source Flutter package to easily show pricing cards on their application.",
     url: "https://github.com/f2acode/pricing_cards",
     image: flutter,
-    type: "Open-source",
-    role: "Developer",
+    role: "Principal developer",
+    period: "2020 - present",
   },
-
   {
-    title: "Flutter package - Flutter Crisp",
+    title: "Flutter Crisp",
     description: "Open source Flutter package to connect with Crisp on their application.",
     url: "https://github.com/lunahq/flutter-crisp",
     image: flutter,
-    type: "Open-source",
     role: "Developer",
+    period: "2020 - present",
   },
 ];
 
 const Portfolio = () => {
   return (
-    <section className="padding" id="portfolio">
-      <h2 style={{ textAlign: "center" }}>Open Portfolio</h2>
-      <hr />
-      <Row>
-        <Col span={18} offset={3}>
-          <List
-            style={{ textAlign: "center" }}
-            grid={{
-              gutter: 16,
-              xs: 1,
-              sm: 2,
-              md: 3,
-              lg: 3,
-              xl: 3,
-              xxl: 3,
-            }}
-            dataSource={projectList}
-            renderItem={(project) => (
-              <List.Item>
-                <Card
-                  key={project.title}
-                  hoverable
-                  cover={<img alt={project.imageAltText} src={project.image} />}
-                  style={{ width: 300 }}
-                  size="small"
+    <Content
+      id="portfolio"
+      style={{ padding: "2rem 0", display: "flex", justifyContent: "center" }}
+    >
+      <Card
+        style={{
+          width: "90%",
+          display: "flex",
+          flexDirection: "column",
+          textAlign: "center",
+          alignItems: "center",
+        }}
+      >
+        <Flex vertical justify={"center"} align={"center"} gap={"medium"}>
+          <Title level={1}>Public Portfolio</Title>
+          <Flex wrap="wrap" gap="small" justify={"center"} align={"center"}>
+            {projectList.map((project) => (
+              <Card
+                className="card"
+                key={project.title}
+                hoverable
+                style={{
+                  width: 300,
+                  margin: "10px",
+                  backgroundColor: "#e5e5e56b",
+                  border: "groove",
+                }}
+                size="small"
+                onClick={() => {
+                  window.open(project.url, "_blank");
+                }}
+              >
+                <img
+                  alt={project.imageAltText}
+                  src={project.image}
+                  style={{ width: "90%", border: "6px solid #fff", background: "white" }}
+                />
+                <Title level={2}>{project.title}</Title>
+                <Flex wrap="wrap" gap="small" justify={"center"} align={"center"}>
+                  <Tag color="green" style={{ fontSize: "medium" }}>
+                    {project.period}
+                  </Tag>
+                  <Tag color="geekblue" style={{ fontSize: "medium" }}>
+                    {project.role}
+                  </Tag>
+                </Flex>
+                <Title level={5} style={{ fontWeight: "300" }}>
+                  {project.description}
+                </Title>
+                <br />
+                <Button
+                  type="primary"
+                  size={"large"}
                   onClick={() => {
-                    window.location.href = project.url;
+                    window.open(project.url, "_blank");
                   }}
                 >
-                  <Meta title={project.title} description={project.description} />
-                  <br />
-                  <Descriptions
-                    bordered
-                    size="small"
-                    items={[
-                      {
-                        key: `Card details role ${project.title}`,
-                        label: "Role",
-                        children: project.role,
-                        span: 3,
-                      },
-                      {
-                        key: `Card details type ${project.title}`,
-                        label: "Type",
-                        children: project.type,
-                        span: 3,
-                      },
-                    ]}
-                  />
-                </Card>
-              </List.Item>
-            )}
-          />
-        </Col>
-      </Row>
-    </section>
+                  View reference
+                </Button>
+              </Card>
+            ))}
+          </Flex>
+        </Flex>
+      </Card>
+    </Content>
   );
 };
 
