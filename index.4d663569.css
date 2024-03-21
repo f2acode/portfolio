@@ -9,4 +9,29 @@ html, body {
   overflow-x: hidden;
 }
 
+#portfolioButton {
+  color: #fff;
+  text-shadow: 0 0 10px #ffffffb3;
+  background: linear-gradient(to right, #8b0000, red);
+  border: none;
+  transition: transform .3s;
+  box-shadow: 0 5px 15px #0000004d;
+}
+
+#linkedinConnection {
+  background-color: #0077b5;
+}
+
+#githubConnection {
+  background-color: #24292e;
+}
+
+#emailConnection {
+  background-color: #d44638;
+}
+
+.buttonConnection:hover {
+  transform: scale(1.1)translateZ(0);
+}
+
 /*# sourceMappingURL=index.4d663569.css.map */
