@@ -8,7 +8,7 @@ import flutter from "../images/portfolio/flutter.png";
 import luna from "../images/portfolio/luna.png";
 
 const { Content } = Layout;
-const { Title, Link } = Typography;
+const { Title, Link, Text } = Typography;
 
 const projectList = [
   {
@@ -71,7 +71,7 @@ const Portfolio = () => {
       closable: true,
       content: (
         <>
-          <Title level={3} style={{ margin: "10px 0" }} type="secondary">
+          <Title level={3} style={{ margin: "10px 0", fontWeight: 300 }} type="secondary">
             {project.description}
           </Title>
           <Descriptions
@@ -81,32 +81,12 @@ const Portfolio = () => {
               {
                 key: "1",
                 label: "Period",
-                children: (
-                  <>
-                    <Badge
-                      status="success"
-                      text={
-                        <Tag color="green" style={{ fontSize: "medium" }}>
-                          {project.period}
-                        </Tag>
-                      }
-                    />
-                  </>
-                ),
+                children: <Text>{project.period}</Text>,
               },
               {
                 key: "2",
                 label: "Role",
-                children: (
-                  <Badge
-                    status="success"
-                    text={
-                      <Tag color="geekblue" style={{ fontSize: "medium" }}>
-                        {project.role}
-                      </Tag>
-                    }
-                  />
-                ),
+                children: <Text>{project.role}</Text>,
               },
               {
                 key: "3",
