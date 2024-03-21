@@ -1,6 +1,6 @@
 import { GithubFilled, LinkedinFilled, MailFilled, StarFilled } from "@ant-design/icons";
 import { Button, Card, Divider, Flex, Layout, Tag, Typography } from "antd";
-import React, { useState } from "react";
+import React from "react";
 
 const { Content } = Layout;
 const { Title } = Typography;
@@ -34,18 +34,6 @@ const imageStyle = {
 const About = (props) => {
   const { linkedIn, gitHub, email } = props;
 
-  const [isHovered, setIsHovered] = useState(false);
-
-  const buttonStyle = {
-    background: "linear-gradient(to right, darkred, red)",
-    border: "none",
-    color: "white",
-    textShadow: "0px 0px 10px rgba(255,255,255,0.7)",
-    transition: "transform 0.3s ease",
-    boxShadow: "0 5px 15px rgba(0,0,0,0.3)",
-    transform: isHovered ? "scale(1.1) translateZ(0)" : "translateZ(0)",
-  };
-
   return (
     <Content id="about" style={{ padding: "5rem 0", display: "flex", justifyContent: "center" }}>
       <img src={tech} alt={imageAltText} style={imageStyle} />
@@ -56,6 +44,7 @@ const About = (props) => {
           flexDirection: "column",
           textAlign: "center",
           alignItems: "center",
+          backgroundColor: "rgb(255 255 255 / 95%)",
         }}
       >
         <Title level={1} style={{ margin: 0 }}>
@@ -86,23 +75,21 @@ const About = (props) => {
         <Divider />
         <Flex wrap="wrap" gap="large" justify={"center"} align={"center"}>
           <Button
-            key="porfolioShortcut"
+            id="portfolioButton"
+            className="buttonConnection"
             type="primary"
-            style={buttonStyle}
             icon={<StarFilled />}
             size={"large"}
             onClick={() => {
               window.location.href = "#portfolio";
             }}
-            onMouseEnter={() => setIsHovered(true)}
-            onMouseLeave={() => setIsHovered(false)}
           >
             Portfolio 🚀
           </Button>
           <Button
-            key="linkedinConnection"
+            id="linkedinConnection"
+            className="buttonConnection"
             type="primary"
-            style={{ backgroundColor: "#0077b5" }}
             icon={<LinkedinFilled />}
             size={"large"}
             onClick={() => {
@@ -112,9 +99,9 @@ const About = (props) => {
             LinkedIn
           </Button>
           <Button
-            key="githubConnection"
+            id="githubConnection"
+            className="buttonConnection"
             type="primary"
-            style={{ backgroundColor: "#24292e" }}
             icon={<GithubFilled />}
             size={"large"}
             onClick={() => {
@@ -124,9 +111,9 @@ const About = (props) => {
             GitHub
           </Button>
           <Button
-            key="emailConnection"
+            id="emailConnection"
+            className="buttonConnection"
             type="primary"
-            style={{ backgroundColor: "#D44638" }}
             icon={<MailFilled />}
             size={"large"}
             onClick={() => {
