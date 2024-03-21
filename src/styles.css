@@ -2,11 +2,11 @@
 * CSS file to hold styles that apply across the application
 */
 
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&family=Montserrat:wght@200;400;600;800&display=swap");
 
 html,
 body {
-  font-family: "Montserrat", sans-serif;
   height: 100%;
   margin: 0;
   overflow-x: hidden;
@@ -38,4 +38,14 @@ body {
 
 .buttonConnection:hover {
   transform: scale(1.1) translateZ(0);
+}
+
+.responsive-card {
+  width: 90%;
+}
+
+@media (min-width: 768px) {
+  .responsive-card {
+    width: 50%;
+  }
 }

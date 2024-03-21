@@ -35,11 +35,11 @@ const About = (props) => {
   const { linkedIn, gitHub, email } = props;
 
   return (
-    <Content id="about" style={{ padding: "5rem 0", display: "flex", justifyContent: "center" }}>
+    <Content id="about" style={{ padding: "2rem 0", display: "flex", justifyContent: "center" }}>
       <img src={tech} alt={imageAltText} style={imageStyle} />
       <Card
+        className="responsive-card"
         style={{
-          width: "90%",
           display: "flex",
           flexDirection: "column",
           textAlign: "center",
@@ -65,7 +65,7 @@ const About = (props) => {
           Passionate about solving problems in new creative ways to drive innovation and impact.
         </Title>
         <Divider />
-        <Flex wrap="wrap" gap="small">
+        <Flex wrap="wrap" gap="small" align="center" justify="center">
           {skillsList.map((skill) => (
             <Tag color="geekblue" key={skill} style={{ fontSize: "medium" }}>
               {skill}
